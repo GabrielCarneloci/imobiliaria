@@ -19,7 +19,7 @@
       <span class="brand-mark" aria-hidden="true">V</span><span>VÉRTICE<small>IMÓVEIS</small></span>
     </a>
     <nav id="menu" aria-label="Navegação principal">
-      <a href="#imoveis">Imóveis</a><a href="#sobre">A Vértice</a><a href="#servicos">Serviços</a><a href="#contato">Contato</a>
+      <a href="#imoveis">Imóveis</a><a href="#bairros">Bairros</a><a href="#sobre">A Vértice</a><a href="#servicos">Serviços</a><a href="#contato">Contato</a>
     </nav>
     <a class="nav-cta" href="#contato">Fale conosco <span aria-hidden="true">↗</span></a>
     <button class="menu-button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
@@ -45,9 +45,9 @@
     <section class="search-section" aria-labelledby="busca-titulo">
       <div class="search-heading reveal"><p class="eyebrow">ENCONTRE O SEU LUGAR</p><h2 id="busca-titulo">A busca pelo imóvel<br>ideal começa aqui.</h2></div>
       <form class="search-box reveal delay-1" id="property-search">
-        <div class="search-field"><label for="loc">Localização</label><select id="loc"><option value="">Onde você quer morar?</option><option>Jardins</option><option>Vila Madalena</option><option>Pinheiros</option><option>Moema</option></select></div>
-        <div class="search-field"><label for="tipo">Tipo de imóvel</label><select id="tipo"><option value="">Todos os tipos</option><option>Apartamento</option><option>Casa</option><option>Cobertura</option></select></div>
-        <div class="search-field"><label for="preco">Faixa de preço</label><select id="preco"><option value="">Qual seu orçamento?</option><option>Até R$ 1 milhão</option><option>R$ 1–3 milhões</option><option>Acima de R$ 3 milhões</option></select></div>
+        <div class="search-field"><label for="loc">Localização</label><select id="loc"><option value="">Onde você quer morar?</option><option value="jardins">Jardins</option><option value="vila-madalena">Vila Madalena</option><option value="pinheiros">Pinheiros</option><option value="moema">Moema</option><option value="itaim-bibi">Itaim Bibi</option></select></div>
+        <div class="search-field"><label for="tipo">Tipo de imóvel</label><select id="tipo"><option value="">Todos os tipos</option><option value="apartamento">Apartamento</option><option value="casa">Casa</option><option value="cobertura">Cobertura</option></select></div>
+        <div class="search-field"><label for="preco">Faixa de preço</label><select id="preco"><option value="">Qual seu orçamento?</option><option value="0-1000000">Até R$ 1 milhão</option><option value="1000000-3000000">R$ 1–3 milhões</option><option value="3000000-999999999">Acima de R$ 3 milhões</option></select></div>
         <button type="submit" class="search-button" aria-label="Buscar imóveis">⌕</button>
       </form>
       <p class="search-result" id="search-result" aria-live="polite"></p>
@@ -57,8 +57,8 @@
 
     <section class="properties section" id="imoveis" aria-labelledby="imoveis-titulo">
       <div class="section-head"><div><p class="eyebrow">SELEÇÃO VÉRTICE</p><h2 id="imoveis-titulo">Imóveis que inspiram<br>novos capítulos.</h2></div><a class="text-link" href="#contato">Ver todos os imóveis <span aria-hidden="true">→</span></a></div>
-      <div class="property-grid">
-        <article class="property-card reveal">
+      <div class="property-grid" id="property-grid">
+        <article class="property-card reveal" data-location="jardins" data-type="apartamento" data-price="4850000">
           <div class="property-image img-one" role="img" aria-label="Fachada do Apartamento Jardins"><span class="tag">DESTAQUE</span><button class="heart" aria-label="Favoritar Apartamento Jardins" aria-pressed="false">♡</button></div>
           <div class="property-info">
             <p>JARDINS · SÃO PAULO</p><h3>Apartamento Jardins</h3>
@@ -66,7 +66,7 @@
             <p class="price">R$ 4.850.000</p>
           </div>
         </article>
-        <article class="property-card reveal delay-1">
+        <article class="property-card reveal delay-1" data-location="vila-madalena" data-type="casa" data-price="5900000">
           <div class="property-image img-two" role="img" aria-label="Fachada da Casa Pátio"><button class="heart" aria-label="Favoritar Casa Pátio" aria-pressed="false">♡</button></div>
           <div class="property-info">
             <p>VILA MADALENA · SÃO PAULO</p><h3>Casa Pátio</h3>
@@ -74,7 +74,7 @@
             <p class="price">R$ 5.900.000</p>
           </div>
         </article>
-        <article class="property-card reveal delay-2">
+        <article class="property-card reveal delay-2" data-location="pinheiros" data-type="apartamento" data-price="2450000">
           <div class="property-image img-three" role="img" aria-label="Fachada do Horizonte Pinheiros"><span class="tag">LANÇAMENTO</span><button class="heart" aria-label="Favoritar Horizonte Pinheiros" aria-pressed="false">♡</button></div>
           <div class="property-info">
             <p>PINHEIROS · SÃO PAULO</p><h3>Horizonte Pinheiros</h3>
@@ -82,8 +82,59 @@
             <p class="price">R$ 2.450.000</p>
           </div>
         </article>
+        <article class="property-card reveal" data-location="moema" data-type="apartamento" data-price="980000">
+          <div class="property-image img-four" role="img" aria-label="Fachada do Studio Moema"><span class="tag">OPORTUNIDADE</span><button class="heart" aria-label="Favoritar Studio Moema" aria-pressed="false">♡</button></div>
+          <div class="property-info">
+            <p>MOEMA · SÃO PAULO</p><h3>Studio Moema</h3>
+            <ul class="features"><li>68 m²</li><li>1 suíte</li><li>1 vaga</li></ul>
+            <p class="price">R$ 980.000</p>
+          </div>
+        </article>
+        <article class="property-card reveal delay-1" data-location="itaim-bibi" data-type="cobertura" data-price="8200000">
+          <div class="property-image img-five" role="img" aria-label="Fachada da Cobertura Itaim"><span class="tag">EXCLUSIVO</span><button class="heart" aria-label="Favoritar Cobertura Itaim" aria-pressed="false">♡</button></div>
+          <div class="property-info">
+            <p>ITAIM BIBI · SÃO PAULO</p><h3>Cobertura Itaim</h3>
+            <ul class="features"><li>410 m²</li><li>4 suítes</li><li>5 vagas</li></ul>
+            <p class="price">R$ 8.200.000</p>
+          </div>
+        </article>
+        <article class="property-card reveal delay-2" data-location="jardins" data-type="cobertura" data-price="2890000">
+          <div class="property-image img-six" role="img" aria-label="Fachada da Cobertura Duplex Jardins"><button class="heart" aria-label="Favoritar Cobertura Duplex Jardins" aria-pressed="false">♡</button></div>
+          <div class="property-info">
+            <p>JARDINS · SÃO PAULO</p><h3>Cobertura Duplex Jardins</h3>
+            <ul class="features"><li>210 m²</li><li>3 suítes</li><li>3 vagas</li></ul>
+            <p class="price">R$ 2.890.000</p>
+          </div>
+        </article>
+      </div>
+      <p class="no-results" id="no-results" hidden>Nenhum imóvel encontrado para esses filtros. Fale com um consultor para uma busca personalizada.</p>
+    </section>
+
+    <div class="vertex-divider" aria-hidden="true"><svg viewBox="0 0 34 18"><path d="M1 1 17 17 33 1"/></svg></div>
+
+    <section class="neighborhoods section" id="bairros" aria-labelledby="bairros-titulo">
+      <div class="section-head"><div><p class="eyebrow">ONDE ATUAMOS</p><h2 id="bairros-titulo">Bairros que conhecemos<br>de perto.</h2></div></div>
+      <ul class="neighborhood-grid">
+        <li class="reveal"><h3>Jardins</h3><p>Endereços clássicos, ruas arborizadas e a maior concentração de imóveis de alto padrão da cidade.</p></li>
+        <li class="reveal delay-1"><h3>Vila Madalena</h3><p>Bairro criativo, boêmio e cada vez mais procurado por quem busca casas com quintal e personalidade.</p></li>
+        <li class="reveal delay-2"><h3>Pinheiros</h3><p>Vida de bairro, gastronomia e novos lançamentos residenciais a poucos passos do metrô.</p></li>
+        <li class="reveal"><h3>Moema</h3><p>Perto do parque, com opções mais compactas e ótimo custo-benefício para o primeiro imóvel.</p></li>
+        <li class="reveal delay-1"><h3>Itaim Bibi</h3><p>Endereço corporativo e residencial, com coberturas e imóveis de assinatura arquitetônica.</p></li>
+      </ul>
+    </section>
+
+    <div class="vertex-divider" aria-hidden="true"><svg viewBox="0 0 34 18"><path d="M1 1 17 17 33 1"/></svg></div>
+
+    <section class="faq section" id="perguntas" aria-labelledby="faq-titulo">
+      <div class="section-head"><div><p class="eyebrow">DÚVIDAS FREQUENTES</p><h2 id="faq-titulo">Antes de conversar<br>com um consultor.</h2></div></div>
+      <div class="faq-list">
+        <details class="reveal"><summary>Como funciona a curadoria da Vértice?</summary><p>Entendemos seu momento e orçamento antes de indicar imóveis, evitando visitas que não fazem sentido para você.</p></details>
+        <details class="reveal delay-1"><summary>Vocês cuidam da documentação?</summary><p>Sim. Nossa assessoria acompanha da proposta à assinatura, incluindo due diligence e financiamento.</p></details>
+        <details class="reveal delay-2"><summary>Atendem quem quer vender um imóvel?</summary><p>Sim, também estruturamos a venda com avaliação de mercado e divulgação para nossa base de compradores.</p></details>
       </div>
     </section>
+
+    <div class="vertex-divider" aria-hidden="true"><svg viewBox="0 0 34 18"><path d="M1 1 17 17 33 1"/></svg></div>
 
     <section class="about" id="sobre" aria-labelledby="sobre-titulo">
       <div class="about-photo" role="img" aria-label="Interior iluminado de um imóvel de alto padrão"></div>
