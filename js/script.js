@@ -23,10 +23,39 @@ document.querySelectorAll('.heart').forEach(button => {
 
 // Busca de imóveis
 const searchForm = document.querySelector('#property-search');
+const propertyCards = document.querySelectorAll('.property-card');
+const searchResult = document.querySelector('#search-result');
+const noResults = document.querySelector('#no-results');
+
 searchForm?.addEventListener('submit', event => {
   event.preventDefault();
-  document.querySelector('#search-result').textContent =
-    'Encontramos imóveis especiais para o seu perfil. Um consultor pode ajudar você a refinar a busca.';
+  const location = document.querySelector('#loc').value;
+  const type = document.querySelector('#tipo').value;
+  const priceRange = document.querySelector('#preco').value;
+  const [minPrice, maxPrice] = priceRange ? priceRange.split('-').map(Number) : [null, null];
+
+  let matches = 0;
+  propertyCards.forEach(card => {
+    const price = Number(card.dataset.price);
+    const matchesLocation = !location || card.dataset.location === location;
+    const matchesType = !type || card.dataset.type === type;
+    const matchesPrice = !priceRange || (price >= minPrice && price <= maxPrice);
+    const isMatch = matchesLocation && matchesType && matchesPrice;
+    card.hidden = !isMatch;
+    if (isMatch) matches += 1;
+  });
+
+  if (noResults) noResults.hidden = matches !== 0;
+
+  if (!location && !type && !priceRange) {
+    searchResult.textContent = 'Mostrando todos os imóveis disponíveis.';
+  } else if (matches === 0) {
+    searchResult.textContent = 'Nenhum imóvel encontrado para esses filtros.';
+  } else {
+    searchResult.textContent = `${matches} imóvel${matches > 1 ? 'is' : ''} encontrado${matches > 1 ? 's' : ''} para o seu perfil.`;
+  }
+
+  document.querySelector('#imoveis')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
 // Formulário de contato
