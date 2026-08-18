@@ -36,7 +36,10 @@ nav a:hover:after,nav a:focus-visible:after{right:0}
 
 /* Hero */
 .hero{height:min(780px,100vh);min-height:650px;color:#fff;position:relative;display:flex;align-items:center;padding:0 9vw;overflow:hidden}
-.hero-image,.hero-overlay{position:absolute;inset:0}
+.hero-image,.hero-overlay,.hero-glow{position:absolute;inset:0}
+.hero-glow{pointer-events:none;opacity:0;transition:opacity .4s ease;background:radial-gradient(280px circle at var(--x,50%) var(--y,50%),#e9c98f22,transparent 70%)}
+.hero:hover .hero-glow{opacity:1}
+@media(max-width:800px){.hero-glow{display:none}}
 .hero-image{background:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=90') center/cover}
 .hero-overlay{background:linear-gradient(90deg,#101f18d6 0%,#10201975 45%,#10201933 100%)}
 .hero-content{position:relative;z-index:1;margin-top:80px;max-width:760px}
@@ -49,7 +52,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(3.4rem,6.2vw,6.4rem);letter-spac
 .button-light{color:var(--ink);background:#fff}
 .hero-stats{position:absolute;z-index:1;bottom:50px;right:6vw;display:flex;gap:38px}
 .hero-stats div{border-left:1px solid #ffffff77;padding-left:14px;display:grid}
-.hero-stats strong{font:500 26px 'Fraunces',serif}
+.hero-stats strong{font:500 26px 'Fraunces',serif;font-variant-numeric:tabular-nums}
 .hero-stats span{font-size:10px;color:#eee;margin-top:3px}
 .scroll-hint{position:absolute;z-index:1;bottom:54px;left:5.5vw;color:#fff;font-size:9px;letter-spacing:.14em;text-decoration:none;writing-mode:vertical-rl}
 .scroll-hint span{display:block;height:38px;border-left:1px solid var(--gold);margin:13px auto 0}
@@ -128,6 +131,14 @@ h1{font-family:'Fraunces',serif;font-size:clamp(3.4rem,6.2vw,6.4rem);letter-spac
 .button-gold{background:var(--gold);color:#fff;margin-top:12px}
 .button-gold:hover{background:#93743f}
 .form-message{font-size:12px;color:var(--gold-light);margin:0;min-height:16px}
+
+/* Progresso de rolagem — assinatura visual (o vértice sendo traçado) */
+.progress-line{position:fixed;top:0;left:0;height:2px;background:var(--gold);width:0%;z-index:50;transition:width .1s linear}
+
+/* Divisor vértice — reaparece entre seções como marca autoral */
+.vertex-divider{display:flex;justify-content:center;padding:0 0 0;margin:0}
+.vertex-divider svg{width:34px;height:18px;opacity:.55}
+.vertex-divider path{fill:none;stroke:var(--gold);stroke-width:1.4}
 
 footer{background:#0d1713;color:#dfe3dd;min-height:140px;padding:40px 5.5vw;display:flex;align-items:center;justify-content:space-between}
 footer p,footer div{font-size:10px;color:#8f9790}
