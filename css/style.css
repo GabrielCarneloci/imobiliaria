@@ -68,6 +68,21 @@ h1{font-family:'Fraunces',serif;font-size:clamp(3.4rem,6.2vw,6.4rem);letter-spac
 .search-button:hover{background:var(--focus)}
 .search-result{grid-column:2;margin:10px 0 0;color:var(--gold);font-size:12px;min-height:16px}
 
+/* Bairros */
+.neighborhood-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:25px;list-style:none;padding:0;margin:0}
+.neighborhood-grid li{border-top:1px solid var(--line);padding-top:18px}
+.neighborhood-grid h3{font:500 19px 'Fraunces',serif;margin-bottom:10px}
+.neighborhood-grid p{font-size:12px;line-height:1.6;color:var(--muted)}
+
+/* FAQ */
+.faq-list{display:grid;gap:0;max-width:760px}
+.faq-list details{border-top:1px solid var(--line);padding:20px 0}
+.faq-list summary{cursor:pointer;font:500 17px 'Fraunces',serif;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:after{content:"+";color:var(--gold);font-size:20px;flex:none}
+.faq-list details[open] summary:after{content:"–"}
+.faq-list p{margin-top:14px;color:var(--muted);font-size:13px;line-height:1.7;max-width:600px}
+
 /* Sections */
 .section{padding:115px 9vw}
 .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:45px;gap:20px}
@@ -81,6 +96,11 @@ h1{font-family:'Fraunces',serif;font-size:clamp(3.4rem,6.2vw,6.4rem);letter-spac
 .img-one{background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85')}
 .img-two{background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85')}
 .img-three{background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85')}
+.img-four{background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=85')}
+.img-five{background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1000&q=85')}
+.img-six{background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1000&q=85')}
+.property-card[hidden]{display:none}
+.no-results{color:var(--muted);font-size:13px;margin-top:10px}
 .tag{position:absolute;top:15px;left:15px;padding:7px 9px;background:#fff;font-size:8px;font-weight:bold;letter-spacing:.12em}
 .heart{position:absolute;right:15px;top:12px;border:0;background:none;color:#fff;font-size:26px;cursor:pointer;line-height:1;filter:drop-shadow(0 1px 3px rgba(0,0,0,.35))}
 .heart.active{color:#d46969}
@@ -170,6 +190,7 @@ footer a:hover{color:#fff}
   .about-photo{height:330px}
   .about-content{padding:70px 7vw}
   .service-grid{grid-template-columns:1fr;gap:28px}
+  .neighborhood-grid{grid-template-columns:1fr 1fr;gap:22px}
   .testimonial{padding:75px 8%}
   .contact{grid-template-columns:1fr;padding:80px 7%;gap:25px}
   footer{padding:35px 7%;display:grid;gap:23px;justify-content:start}
