@@ -12,6 +12,7 @@
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="progress-line" id="progress-line" aria-hidden="true"></div>
   <div class="intro" aria-hidden="true"><div class="intro-logo"><span class="brand-mark">V</span><span>VÉRTICE<small>IMÓVEIS</small></span></div><i></i></div>
   <header class="topbar">
     <a class="brand" href="#inicio" aria-label="Vértice Imóveis, página inicial">
@@ -26,14 +27,18 @@
 
   <main id="conteudo">
     <section class="hero" id="inicio">
-      <div class="hero-image" role="img" aria-label="Fachada de edifício residencial de alto padrão ao entardecer"></div><div class="hero-overlay"></div>
+      <div class="hero-image" role="img" aria-label="Fachada de edifício residencial de alto padrão ao entardecer"></div><div class="hero-overlay"></div><div class="hero-glow" id="hero-glow"></div>
       <div class="hero-content reveal-hero">
         <p class="eyebrow light">SEU PRÓXIMO ENDEREÇO, ELEVADO</p>
         <h1>Onde viver bem<br>ganha um novo <em>sentido.</em></h1>
         <p class="hero-copy">Curadoria de imóveis excepcionais para momentos que merecem começar no lugar certo.</p>
         <a href="#imoveis" class="button button-light">Explorar imóveis <span aria-hidden="true">↓</span></a>
       </div>
-      <div class="hero-stats"><div><strong>12</strong><span>anos de excelência</span></div><div><strong>+850</strong><span>histórias realizadas</span></div><div><strong>4,9/5</strong><span>satisfação dos clientes</span></div></div>
+      <div class="hero-stats">
+        <div><strong data-count-to="12" data-suffix="">0</strong><span>anos de excelência</span></div>
+        <div><strong data-count-to="850" data-prefix="+">+0</strong><span>histórias realizadas</span></div>
+        <div><strong data-static>4,9/5</strong><span>satisfação dos clientes</span></div>
+      </div>
       <a href="#imoveis" class="scroll-hint">ROLE PARA DESCOBRIR <span aria-hidden="true"></span></a>
     </section>
 
@@ -47,6 +52,8 @@
       </form>
       <p class="search-result" id="search-result" aria-live="polite"></p>
     </section>
+
+    <div class="vertex-divider" aria-hidden="true"><svg viewBox="0 0 34 18"><path d="M1 1 17 17 33 1"/></svg></div>
 
     <section class="properties section" id="imoveis" aria-labelledby="imoveis-titulo">
       <div class="section-head"><div><p class="eyebrow">SELEÇÃO VÉRTICE</p><h2 id="imoveis-titulo">Imóveis que inspiram<br>novos capítulos.</h2></div><a class="text-link" href="#contato">Ver todos os imóveis <span aria-hidden="true">→</span></a></div>
@@ -88,6 +95,8 @@
         <a href="#contato" class="text-link">Conheça nossa história <span aria-hidden="true">→</span></a>
       </div>
     </section>
+
+    <div class="vertex-divider" aria-hidden="true"><svg viewBox="0 0 34 18"><path d="M1 1 17 17 33 1"/></svg></div>
 
     <section class="services section" id="servicos" aria-labelledby="servicos-titulo">
       <p class="eyebrow center">A EXPERIÊNCIA VÉRTICE</p><h2 id="servicos-titulo">Todo o cuidado em cada etapa.</h2>
